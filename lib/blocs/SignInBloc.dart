@@ -7,7 +7,7 @@ import 'package:email_validator/email_validator.dart';
 class SignInBloc extends Bloc<SignInEvent,SignInState> {
   SignInBloc() : super(InitialSignInState()) {
     on<SignInTextChangedEvent>((event, emit) {
-      if (event.emailValue == '' && EmailValidator.validate(event.emailValue)) {
+      if (EmailValidator.validate(event.emailValue) == false) {
         emit(SignInErrorState('Enter valid email address'));
       }
       else if(event.passwordValue.length < 8){

@@ -21,7 +21,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ElevatedButton(
+                CupertinoButton(
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -31,15 +31,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                       SignInBloc(),
                                   child: SignInScreen())));
                     },
-                    child: Text('SignIn using email')),
+                    color: Colors.orange,
+                    child: Text('Sign  In via Email')),
+                SizedBox(height: 10,),
                 CupertinoButton(
                   child: Text(
-                    'SignIn using Google',
-                    style: TextStyle(color: Colors.black45),
+                    'SignIn via Google',
+                    // style: TextStyle(color: Colors.black45),
                   ),
                   onPressed: () {},
-                  color: Color(0xffd3b0cd),
+                  color: Colors.orange,
                 ),
+                SizedBox(height: 2,)
               ],
             ),
           ),
